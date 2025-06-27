@@ -6,8 +6,14 @@
   <title>Coach App Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- BOOTSTRAP CSS (Make sure this is in your <head>) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- BOOTSTRAP ICONS (For checkmarks) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -46,115 +52,233 @@
 <!-- HERO SECTION -->
 <section class="hero-section d-flex align-items-center">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center"> 
 
       <!-- LEFT SIDE CONTENT -->
-      <div class="col-md-6 text-center text-md-start">
+       <div class="col-md-6 text-center text-md-start">
         <h6 class="text-primary text-uppercase fw-bold">Coach App</h6>
-        <h1 class="display-6 fw-bold mb-3">Empower Coaches with<br>Real-Time Insights!</h1>
+        <h3 class="display-6 fw-bold mb-3">Empower Coaches with<br>Real-Time Insights!</h3>
         <p class="lead text-muted mb-4">
           A powerful app built for coaches to plan workouts, track <br>member progress, manage sessions, and stay connected—<br>
           elevating every training experience.        </p>
-        <a href="#" class="btn btn-outline-dark px-4 py-2 rounded-3">Get a Demo</a>
+        <a href="#" class="btn btn-primary ">Get a Demo</a>
       </div>
 
       <!-- RIGHT SIDE IMAGE -->
-      <div class="col-md-6 text-center">
+       <div class="col-md-6 ">
         <div class="image-wrapper position-relative">
-          <!-- <div class="image-bg"></div> -->
-          <img src="./resource/coch_app_1.png" alt="Coach App UI" class="main-image img-fluid">
+           <div class="image-bg"></div> 
+           <img src="./resource/coch_app_1.png" alt="Coach App UI" class="main-image img-fluid">
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </div> 
+</section> 
+
+
+
+
+
 
 <!-- SECOND SECTION -->
-<section class="second-section d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- LEFT SIDE IMAGE -->
-      <div class="col-lg-6 text-center mb-4 mb-lg-0">
-        <div class="second-image-wrapper position-relative">
-          <!-- <div class="image-bg"></div> -->
-          <img src="./resource/coach_app_2.png" alt="Workout Plan" class="main-image img-fluid">
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE TEXT -->
-      <div class="col-lg-6">
-        <div class="ps-lg-4">
-          <h3 class="fw-bold text-dark mb-3">Workout & Nutrition Plan</h3>
-          <p class="text-muted mb-4">
-            Create and assign personalized workout and nutrition plans for members.
-            Enhance their progress by collaborating with other coaches.
-          </p>
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Design customized workout routines tailored to individual goals and fitness levels
-            </li>
-            <li class="mb-3">
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Create nutrition plans to complement workout routines and maximize results
-            </li>
-            <li>
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Share plans with other coaches and track member adherence for continuous improvement
-            </li>
-          </ul>
-        </div>
-      </div>
-
+ <section class="second-section">
+  <div class="custom-container">
+    <div class="image-col">
+      <img src="./resource/coach_app_2.png" alt="Intake UI">
+    </div>
+    <div class="text-col">
+      <h3>Workout & Nutrition Plan</h3>
+      <p>
+        Create and assign personalized workout and nutrition plans for members. Enhance their progress by collaborating with other coaches. 
+      </p>
+      <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Design customized workout routines tailored to individual goals and fitness levels</li>
+        <li><i class="bi bi-check2 text-primary"></i> Create nutrition plans to complement workout routines and maximize results</li>
+        <li><i class="bi bi-check2 text-primary"></i> Share plans with other coaches and track member adherence for continuous improvement</li>
+      </ul>
     </div>
   </div>
-</section>
+</section> 
+
 
 <!-- THIRD SECTION -->
-<section class="third-section d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- LEFT TEXT SIDE -->
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <div class="pe-lg-4">
-          <h3 class="fw-bold text-dark mb-3">Real-Time Member Tracking</h3>
-          <p class="text-muted mb-4">
-            Monitor each member’s progress with live tracking dashboards, session histories, and performance data. Stay informed to provide proactive coaching and support.
-          </p>
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Live dashboards for member progress and session summaries
-            </li>
-            <li class="mb-3">
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Get alerts and insights to adjust plans instantly
-            </li>
-            <li>
-              <i class="bi bi-check2 text-primary me-2"></i>
-              Boost motivation by celebrating small wins in real time
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- RIGHT IMAGE SIDE -->
-      <div class="col-lg-6 text-center">
-        <div class="third-image-wrapper position-relative">
-          <div class="image-bg"></div>
-          <img src="./resource/coach_app_3.png" alt="Tracking Dashboard" class="main-image img-fluid">
-        </div>
-      </div>
-
+<section class="third-section">
+  <div class="custom-container">
+    <div class="text-col">
+      <h3>Fitness Test</h3>
+      <p>
+        Conduct fitness assessments to measure progress and identify areas for improvement. Regular tracking helps optimize member results.
+      </p>
+      <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Perform standardized fitness tests to assess strength, endurance, and flexibility</li>
+        <li><i class="bi bi-check2 text-primary"></i> Track and document the progress to monitor member improvements over time</li>
+        <li><i class="bi bi-check2 text-primary"></i> Use test results to customize workouts and set achievable fitness goals</li>
+      </ul>
+    </div>
+    <div class="image-col">
+      <img src="./resource/coach_app_3.png" alt="Progress Tracker UI" class="main-image img-fluid">
     </div>
   </div>
 </section>
+
+
+<!-- FOURTH SECTION -->
+
+ <section class="fourth-section">
+  <div class="custom-container">
+    <div class="image-col">
+      <img src="./resource/coach_app_4.png" alt="Intake UI">
+    </div>
+    <div class="text-col">
+      <h3>Body Measurement & <br> Transformation</h3>
+      <p>
+        Record and track body metrics to visualize progress and transformations over time. Help members stay motivated and achieve their fitness goals.
+      </p>
+      <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Measure and document key body metrics</li>
+        <li><i class="bi bi-check2 text-primary"></i> Upload progress photos to provide a visual representation of transformations</li>
+        <li><i class="bi bi-check2 text-primary"></i> Use data to adjust fitness plans and celebrate member milestones effectively</li>
+      </ul>
+    </div>
+  </div>
+</section> 
+
+
+<!-- FIFTH SECTION -->
+<section class="fifth-section">
+  <div class="custom-container">
+    <div class="text-col">
+      <h3>Community Feed</h3>
+      <p>
+        Foster a sense of community by sharing updates, tips, and inspiration. Keep members motivated and engaged through interactive content.     
+      </p>
+        <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Share member fitness journeys, progress updates, and transformation stories</li>
+        <li><i class="bi bi-check2 text-primary"></i> Post expert tips, workout ideas, and motivational content to inspire members</li>
+        <li><i class="bi bi-check2 text-primary"></i> Encourage interaction through comments, likes, and discussions on posts</li>
+      </ul>
+    </div>
+    <div class="image-col">
+      <img src="./resource/coach_app_5.png" alt="Progress Tracker UI" class="main-image img-fluid">
+    </div>
+  </div>
+</section>
+
+<!-- SIXTH SECTION -->
+
+ <section class="sixth-section">
+  <div class="custom-container">
+    <div class="image-col">
+      <img src="./resource/coach_app_6.png" alt="Intake UI">
+    </div>
+    <div class="text-col">
+      <h3>Challenge Management</h3>
+      <p>
+        Manage, track, and get real-time progress updates for participants of scheduled fitness challenges.
+      </p>
+      <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Track ongoing challenge progress</li>
+        <li><i class="bi bi-check2 text-primary"></i> Monitor participant engagement and performance</li>
+        <li><i class="bi bi-check2 text-primary"></i> Get detailed reports and insights on challenge outcomes</li>
+      </ul>
+    </div>
+  </div>
+</section> 
+
+
+<!-- SEVENTH SECTION -->
+
+<section class="seventh-section">
+  <div class="custom-container">
+    <div class="text-col">
+      <h3>Group Class & Appointment <br> Management</h3>
+      <p>
+      Elevate customer satisfaction by proactively notifying them of any schedule changes for group classes and appointments.
+      </p>
+        <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Manage class and appointment schedules</li>
+        <li><i class="bi bi-check2 text-primary"></i> Send automated notifications for any changes</li>
+        <li><i class="bi bi-check2 text-primary"></i> Keep clients updated with real-time appointment status</li>
+      </ul>
+    </div>
+    <div class="image-col">
+      <img src="./resource/coach_app_7.png" alt="Progress Tracker UI" class="main-image img-fluid">
+    </div>
+  </div>
+</section>
+
+
+<!-- EIGHTH SECTION -->
+
+ <section class="eighth-section">
+  <div class="custom-container">
+    <div class="image-col">
+      <img src="./resource/coach_app_8.png" alt="Intake UI">
+    </div>
+    <div class="text-col">
+      <h3>Track Incentives</h3>
+      <p>
+      Stay motivated with real-time tracking of monetary incentives with an automated system.
+      </p>
+      <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Monitor incentives earned during sessions</li>
+        <li><i class="bi bi-check2 text-primary"></i> View detailed incentive reports and history</li>
+        <li><i class="bi bi-check2 text-primary"></i> Get updates on upcoming and pending incentives</li>
+      </ul>
+    </div>
+  </div>
+</section> 
+
+
+<!-- NINTH SECTION -->
+
+<section class="ninth-section">
+  <div class="custom-container">
+    <div class="text-col">
+      <h3>Academy Management</h3>
+      <p>
+      Manage your student’s growth, achievements, and progress  all in one place.
+      </p>
+        <ul>
+        <li><i class="bi bi-check2 text-primary"></i> Access performance, progress, and attendance in one place</li>
+        <li><i class="bi bi-check2 text-primary"></i> Give ratings and trophies to recognize student achievements</li>
+        <li><i class="bi bi-check2 text-primary"></i> Create levels and assign students to structured training batches</li>
+      </ul>
+    </div>
+    <div class="image-col">
+      <img src="./resource/coach_app_9.png" alt="Progress Tracker UI" class="main-image img-fluid">
+    </div>
+  </div>
+</section>
+
+<!-- !--Discover the features section  -->
+  <section class="discover-section">
+  <div class="discover-content">
+    
+    <!-- NO slide animation for this -->
+    <p class="tagline" id="animatedTagline">
+      EXPERIENCE FITWAY: BOOK YOUR DEMO
+    </p>
+    
+    <!-- Wrap the rest to animate from bottom -->
+    <div class="text-slide-wrapper">
+      <h1>Discover the Future of Fitness Technology</h1>
+      <div class="description">
+        Get a personalized demo to see how FitWay’s innovative software and hardware solutions can elevate your fitness business. Explore our CRM, Branded Member App, Coach App, and hardware integrations with a product expert.
+      </div>
+      <div class="button-wrapper">
+        <button class="demo-button">REQUEST A DEMO</button>
+      </div>
+    </div>
+    
+  </div>
+</section>
+  </section>
 
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

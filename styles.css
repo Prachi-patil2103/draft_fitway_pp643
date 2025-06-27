@@ -3,363 +3,1377 @@ body {
   background-color: #f8f9fa;
 }
 
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #1E1E1E;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 0 40px; */
+}
+
 
 /* Breadcrumb */
 .breadcrumb-container {
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
-  padding: 30px 50px;
+  padding: 40px 50px;
   color: #1E1E1E;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 133.333% */
-  
   }
 
 
-  /* === HERO SECTION BASE === */
+/* ================================
+   HERO SECTION STYLING
+================================== */
+
 .hero-section {
-  background-color: #f5f5f5;         /* light gray background */
-  height: 500px;                     /* fixed height */
-  display: flex;                     /* vertically center row */
+  /* Full section width and height */
+  width: 100%;
+  height: 500px;
+  flex-shrink: 0;
+
+  /* Background color */
+  background: #F5F5F5;
+
+  /* Centering vertically */
+  display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
-/* === TEXT STYLES === */
-.hero-section h6 {
-color: #007BFF;
-/* font-family: Inter; */
-font-size: 22px;
-font-style: normal;
-font-weight: 700;
-line-height: 30px; /* 136.364% */
-  
+/* ================================
+   FLEX CONTAINER INSIDE HERO
+================================== */
+.hero-section .container {
+  /* Horizontal layout with spacing */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  gap: 157.261px;
+  padding: 0 40px;
+
+  /* Optional: Max width to center inside 1440px page */
+  max-width: 1280px;
 }
 
-.hero-section h1 {
-  color: #1E1E1E;
+/* ================================
+   IMAGE COLUMN
+================================== */
+.hero-section .image-wrapper img {
+  /* Exact dimensions from Figma */
+  width: 522.739px;
+  height: 500px;
+
+  /* Prevent shrinking on smaller screens */
+  flex-shrink: 0;
+
+  /* Maintain aspect ratio */
+  aspect-ratio: 522.74 / 500.00;
+  object-fit: contain;
+}
+
+/* ================================
+   TEXT COLUMN
+================================== */
+.hero-section .text-col {
+  display: flex;
+  width: 600px;
+  height: 352px;
+
+  /* Vertical stacking */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 24px; /* Space between elements */
+}
+
+/* ================================
+   SUB HEADING (H6)
+================================== */
+.hero-section .text-col h6 {
+  color: #007BFF; /* Bootstrap primary blue */
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  margin: 0;
+}
+
+/* ================================
+   MAIN HEADING (H1 / H3)
+================================== */
+.hero-section .text-col h1,
+.hero-section .text-col h3 {
+  color: #1E1E1E; /* Dark text */
+  font-family: 'Inter', sans-serif;
   font-size: 48px;
-  font-family: Inter, sans-serif;
+  font-style: normal;
   font-weight: 600;
   line-height: 56px;
-  margin: 0 0 20px;
+  letter-spacing: -1.92px;
+  margin: 0;
 }
 
-.hero-section p {
-color: #777;
-/* font-family: Inter; */
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 30px; /* 150% */
-letter-spacing: -0.08px;
+/* ================================
+   PARAGRAPH TEXT
+================================== */
+.hero-section .text-col p {
+  color: #777; /* Lighter gray */
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.08px;
+  margin: 0;
 }
 
-/* === BUTTON === */
-.hero-section .btn {
-  padding: 16px 28px;
-  font-size: 18px;
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 28px;
-  color: #1E1E1E;
-  background-color: white;
-  border: 1px solid #888888;
+/* ================================
+   BUTTON STYLE & HOVER EFFECT
+================================== */
+.hero-section .text-col .btn {
+  padding: 10px 24px;
+  font-size: 16px;
   border-radius: 8px;
-  cursor: pointer;
+  font-weight: 500;
+  border: 2px solid #000;
+  color: #000;
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
-.hero-section .btn:hover {
-  background-color: #1976fc;  /* Blue background */
-  color: #fff;                /* White text */
-  border: 1px solid #1976fc;  /* Matching blue border */
-  box-shadow: 0 4px 12px rgba(25, 118, 252, 0.3);  /* Soft shadow */
-  transform: scale(1.03);     /* Slight zoom */
-  transition: all 0.3s ease;  /* Smooth animation */
+.hero-section .text-col .btn:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
 }
 
-
-/* === IMAGE WRAPPER === */
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 500px; /* same as section height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* === FOREGROUND IMAGE === */
-.main-image {
-  max-height: 500px;
-  max-width: 100%;
-  position: relative;
-  z-index: 0;
-}
-
-/* === RESPONSIVE TWEAKS === */
-@media (max-width: 768px) {
+/* ================================
+   RESPONSIVE STYLES
+================================== */
+@media (max-width: 992px) {
   .hero-section {
     height: auto;
+    width: 100%;
     padding: 60px 0;
+  }
+
+  .hero-section .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-section .image-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-section .text-col {
+    width: 100%;
+    align-items: center;
     text-align: center;
   }
-
-  .image-wrapper {
-    height: auto;
-    margin-top: 30px;
-  }
-
-  .image-bg {
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
-  }
-
-  .main-image {
-    max-height: 300px;
-  }
 }
 
 
-/* ===================================================
-   SECOND SECTION: Workout & Nutrition Plan
-   Layout: Image on left (500px), Text on right
-   Spacing between sections: 120px
-=================================================== */
-
-/* === Section Container === */
+/* second-section */
 .second-section {
-  display: flex;
+  
   padding-top: 120px;
-  padding-left: 80px;
-  padding-right: 80px;
-  gap: 145px;
-  font-family: 'Inter', sans-serif;
-  background: #fff;
-}
-
-/* === Image Wrapper === */
-.second-image-wrapper {
-  position: relative;                /* Allows absolutely positioned child */
-  width: 100%;
-  height: 500px;                     /* Fixed height as required */
-  display: flex;
-  /* justify-content: center;          Center horizontally */
-  align-items: center;              /* Center vertically */
-}
-
-
-/* === Foreground Main Image === */
-.second-image-wrapper .main-image {
-  max-height: 500px;                /* Image won’t exceed 500px in height */
-  max-width: 100%;                  /* Responsive scaling */
-  position: relative;
-  z-index: 1;                       /* Stays in front of the background */
-}
-
-/* === Right Side Text === */
-.second-section h3 {
-color: #1E1E1E;
-/* font-family: Inter; */
-font-size: 48px;
-font-style: normal;
-font-weight: 600;
-line-height: 56px; /* 116.667% */
-letter-spacing: -1.92px;
-}
-
-.second-section p {
-color: #888;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 30px; /* 150% */
-letter-spacing: -0.08px;
-margin-bottom: 20px;
-max-width: 600px; /* Ensures the text doesn't stretch too wide */
-}
-
-.second-section ul {
-display: flex;
-width: 490px;
-height: 220px;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-gap: 12px;
-flex-shrink: 0;
-}
-
-.second-section li {
-display: flex;
-height: 56px;
-justify-content: center;
-align-items: flex-start;
-gap: 16px;
-flex-shrink: 0;
-color: #888;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 140% */
-letter-spacing: -0.08px;
-}
-
-.second-section i.bi-check2 {
-  font-size: 20px;
-  color: #007BFF;                   /* Bootstrap primary color */
-  margin-right: 10px;
-  flex-shrink: 0;                   /* Icon size stays fixed */
-  display: flex;
-  width: 24px;
-  height: 18.024px;
-  padding: 10px 0px 3px 0px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-/* === Optional padding for spacing text from image on large screens === */
-.ps-lg-4 {
-  padding-left: 1.5rem !important;  /* Adds space between image and text */
-}
-
-/* ===================================================
-   RESPONSIVE DESIGN FOR SMALLER SCREENS
-=================================================== */
-@media (max-width: 991px) {
-  .second-section {
-    flex-direction: column;         /* Stack content vertically */
-    padding-top: 60px;              /* Reduce spacing for small screens */
-    padding-bottom: 60px;
-    text-align: center;             /* Center text on smaller screens */
-  }
-
-  .second-image-wrapper {
-    height: 350px;                  /* Smaller image height on mobile */
-    margin-bottom: 30px;
-  }
-
-  .second-image-wrapper .image-bg {
-    width: 350px;
-    height: 350px;
-  }
-
-  .second-image-wrapper .main-image {
-    max-height: 350px;
-  }
-
-  .ps-lg-4 {
-    padding-left: 0 !important;     /* Remove left padding on mobile */
-  }
-}
-
-
-/* ===================================================
-   THIRD SECTION: Image Right, Text Left
-=================================================== */
-
-.third-section {
+  padding-bottom: 60px;
   background-color: #fff;
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
-/* === Shared styles reused === */
-.third-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 500px;
+.second-section .custom-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 145px;
+  max-width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.third-image-wrapper .image-bg {
-  background-color: #FFF3E6;        /* Custom light background */
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 0;
+.second-section .image-col img {
+  width: 535px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 107 / 120;
 }
 
-.third-image-wrapper .main-image {
-  max-height: 500px;
-  max-width: 100%;
-  position: relative;
-  z-index: 1;
+.second-section .text-col {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 410px;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
 }
 
-/* === Text styling (same as before) === */
-.third-section h3 {
-  font-size: 32px;
-  font-weight: 700;
+
+
+/* === Heading === */
+.second-section .text-col h3 {
   color: #1E1E1E;
-  line-height: 1.3;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
 }
 
-.third-section p {
-  font-size: 18px;
-  color: #666666;
-  line-height: 1.6;
-  max-width: 540px;
+/* === Paragraph === */
+.second-section .text-col p {
+  width: 600px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
 }
 
-.third-section ul {
-  padding-left: 0;
+/* === List === */
+.second-section .text-col ul {
+  /* display: flex; */
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-.third-section li {
-  font-size: 16px;
-  color: #444444;
-  line-height: 1.5;
+
+/* === List Items === */
+.second-section .text-col li {
   display: flex;
+  height: 56px;
+  width: 450px;
+  justify-content: center;
   align-items: flex-start;
-}
-
-.third-section i.bi-check2 {
-  font-size: 20px;
-  color: #007BFF;
-  margin-right: 10px;
+  gap: 16px;
   flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
 }
 
-/* Optional padding on larger screens */
-.pe-lg-4 {
-  padding-right: 1.5rem !important;
-}
-
-/* === Responsive adjustments === */
-@media (max-width: 991px) {
-  .third-section {
+/* === Responsive === */
+@media (max-width: 992px) {
+  .second-section .custom-container {
     flex-direction: column;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    text-align: center;
+    height: auto;
+    gap: 60px;
   }
 
-  .third-image-wrapper {
-    height: 350px;
-    margin-top: 30px;
+  .second-section .image-col img {
+    width: 100%;
+    height: auto;
   }
 
-  .third-image-wrapper .image-bg {
-    width: 350px;
-    height: 350px;
+  .second-section .text-col {
+    width: 100%;
+    height: auto;
   }
 
-  .third-image-wrapper .main-image {
-    max-height: 350px;
+  .second-section .text-col h3 {
+    font-size: 36px;
+    white-space: normal;
   }
 
-  .pe-lg-4 {
-    padding-right: 0 !important;
+  .second-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* === THIRD SECTION === */
+
+.third-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.third-section .custom-container {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  gap: 98.25px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* === Image Column === */
+.third-section .image-col img {
+  width: 581.75px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 581.75 / 600;
+}
+
+/* === Text Column === */
+.third-section .text-col {
+  /* display: flex; */
+  width: 600px;
+  height: 382px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+
+/* === Heading === */
+.third-section .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.third-section .text-col p {
+  width: 600px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.third-section .text-col ul {
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+.third-section .text-col li {
+  display: flex;
+  height: 56px;
+  width: 450px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive (Bootstrap-friendly) === */
+@media (max-width: 992px) {
+  .third-section .custom-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+    height: auto;
+  }
+
+  .third-section .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .third-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .third-section .text-col ul {
+    width: 100%;
+    height: auto;
+  }
+
+  .third-section .text-col h3 {
+    font-size: 36px;
+  }
+
+  .third-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* === FOURTH SECTION === */
+
+.fourth-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.fourth-section .custom-container {
+  display: flex;
+  align-items: center;
+  gap: 180px;
+  max-width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.fourth-section .image-col img {
+  width: 500px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 5/6;
+}
+
+.fourth-section .text-col {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 421.024px;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* === Heading === */
+.fourth-section .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.fourth-section .text-col p {
+  width: 600px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.fourth-section .text-col ul {
+  /* display: flex; */
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+/* === List Items === */
+.fourth-section .text-col li {
+  display: flex;
+  /* height: 56px; */
+  width: 450px;
+  /* justify-content: center; */
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .fourth-section .custom-container {
+    flex-direction: column;
+    height: auto;
+    gap: 60px;
+  }
+
+ .fourth-section .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fourth-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .fourth-section .text-col h3 {
+    font-size: 36px;
+    white-space: normal;
+  }
+
+  .fourth-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* FIFTH SECTION */
+
+
+
+.fifth-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.fifth-section .custom-container {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  gap: 160px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/* === Image Column === */
+.fifth-section .image-col img {
+    width: 520px;
+    height: 600px;
+    flex-shrink: 0;
+    aspect-ratio: 13/15;
+}
+
+/* === Text Column === */
+.fifth-section .text-col {
+  /* display: flex; */
+  width: 600px;
+  height: 382px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+
+/* === Heading === */
+.fifth-section .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.fifth-section .text-col p {
+  width: 600px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.fifth-section .text-col ul {
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+.fifth-section .text-col li {
+  display: flex;
+  height: 56px;
+  width: 450px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive (Bootstrap-friendly) === */
+@media (max-width: 992px) {
+  .fifth-section .custom-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+    height: auto;
+  }
+
+  .fifth-section .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fifth-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .fifth-section .text-col ul {
+    width: 100%;
+    height: auto;
+  }
+
+  .fifth-section .text-col h3 {
+    font-size: 36px;
+  }
+
+  .fifth-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* SIXTH SECTION */
+
+.sixth-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.sixth-section .custom-container {
+  display: flex;
+  align-items: center;
+  gap: 180px;
+  max-width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sixth-section .image-col img {
+  width: 500px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 5/6;
+}
+
+.sixth-section .text-col {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 421.024px;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* === Heading === */
+.sixth-section .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.sixth-section .text-col p {
+  width: 550px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.sixth-section .text-col ul {
+  /* display: flex; */
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+/* === List Items === */
+.sixth-section .text-col li {
+  display: flex;
+  /* height: 56px; */
+  width: 450px;
+  /* justify-content: center; */
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .sixth-section .custom-container {
+    flex-direction: column;
+    height: auto;
+    gap: 60px;
+  }
+
+ .sixth-section.image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .sixth-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .sixth-section .text-col h3 {
+    font-size: 36px;
+    white-space: normal;
+  }
+
+ .sixth-section .text-col p {
+    width: 100%;
+  }
+}
+
+/* <!-- SEVENTH SECTION --> */
+
+
+.seventh-section  {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.seventh-section .custom-container {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  gap: 103px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+/* === Image Column === */
+.seventh-section  .image-col img {
+  width: 577px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 577/600;
+}
+
+/* === Text Column === */
+.seventh-section  .text-col {
+  /* display: flex; */
+  width: 600px;
+  height: 382px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+
+/* === Heading === */
+.seventh-section  .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.seventh-section  .text-col p {
+  width: 600px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.seventh-section  .text-col ul {
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+.seventh-section .text-col li {
+  display: flex;
+  width: 450px;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive (Bootstrap-friendly) === */
+@media (max-width: 992px) {
+  .seventh-section  .custom-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+    height: auto;
+  }
+
+  .seventh-section  .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .seventh-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .seventh-section  .text-col ul {
+    width: 100%;
+    height: auto;
+  }
+
+  .seventh-section  .text-col h3 {
+    font-size: 36px;
+  }
+
+  .seventh-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* <!-- EIGHTH SECTION --> */
+
+
+.eighth-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.eighth-section .custom-container {
+  display: flex;
+  align-items: center;
+  gap: 180px;
+  max-width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.eighth-section .image-col img {
+  width: 500px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 5/6;
+}
+
+.eighth-section .text-col {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 421.024px;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* === Heading === */
+.eighth-section .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.eighth-section .text-col p {
+  width: 550px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.eighth-section .text-col ul {
+  /* display: flex; */
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+/* === List Items === */
+.eighth-section .text-col li {
+  display: flex;
+  /* height: 56px; */
+  width: 450px;
+  /* justify-content: center; */
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .eighth-section .custom-container {
+    flex-direction: column;
+    height: auto;
+    gap: 60px;
+  }
+
+ .eighth-section .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .eighth-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .eighth-section.text-col h3 {
+    font-size: 36px;
+    white-space: normal;
+  }
+
+ .eighth-section .text-col p {
+    width: 100%;
+  }
+}
+
+
+/* <!-- NINTH SECTION --> */
+
+
+.ninth-section  {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.ninth-section .custom-container {
+  display: flex;
+  width: 1280px;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 75px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 600px;
+}
+
+/* === Image Column === */
+.ninth-section  .image-col img {
+  width: 605px;
+  height: 600px;
+  flex-shrink: 0;
+  aspect-ratio: 121/120;
+}
+
+/* === Text Column === */
+.ninth-section  .text-col {
+  /* display: flex; */
+  width: 600px;
+  height: 382px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+
+/* === Heading === */
+.ninth-section  .text-col h3 {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+/* === Paragraph === */
+.ninth-section  .text-col p {
+  width: 570px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+  margin-bottom: 20px;
+}
+
+/* === List === */
+.ninth-section  .text-col ul {
+  width: 490px;
+  height: 220px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+}
+
+.ninth-section .text-col li {
+  display: flex;
+  width: 470px;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.08px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* === Responsive (Bootstrap-friendly) === */
+@media (max-width: 992px) {
+ .ninth-section  .custom-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+    height: auto;
+  }
+
+  .ninth-section  .image-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .ninth-section .text-col {
+    width: 100%;
+    height: auto;
+  }
+
+  .ninth-section  .text-col ul {
+    width: 100%;
+    height: auto;
+  }
+
+  .ninth-section  .text-col h3 {
+    font-size: 36px;
+  }
+
+  .ninth-section  .text-col p {
+    width: 100%;
+  }
+}
+
+
+
+/* Discover section */
+.discover-section {
+  background: url('./resource/features_section.png') no-repeat center;
+  background-size: contain;
+  background-position: center;
+  width: 1440px;
+  height: 416px;
+  flex-shrink: 0;
+  justify-content: center;
+  box-sizing: border-box;
+  opacity: 1; /* Remove animation here */
+  transform: none; /* Reset transform */
+  /* Remove the animation line */
+}
+.text-slide-wrapper {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.6s ease-out;
+}
+
+.text-slide-wrapper.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyframes */
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* discover-content styling */
+.discover-content {
+  
+  max-width: 950px;
+  margin: 0 auto;
+ 
+  padding-top: 05; /* or remove entirely */
+}
+
+.tagline {
+  text-align: center;
+  padding-top: 60px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #0073ff;
+  letter-spacing: 0.5px;
+}
+
+.tagline span {
+  opacity: 0;
+  display: inline-block;
+  transform: scale(0.8);
+  animation: popIn 0.3s forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fallback-text {
+  visibility: hidden;
+}
+ 
+h1 {
+  width: 901px;
+  color: #1E1E1E;
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px; /* 116.667% */
+  letter-spacing: -1.92px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.description {
+ width: 940px;
+  color: #777;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 150% */
+letter-spacing: -0.08px;
+    margin-bottom: 24px; /* Add this line to create space below the text */
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.demo-button {
+  
+  display: flex;
+  padding: 16px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid #007BFF;
+  background: #007BFF;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.demo-button:hover {
+  background-color: #005fcc;
+}
+
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .demo-button {
+    width: 80%;
+    display: inline-block;
   }
 }
