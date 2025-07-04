@@ -1,0 +1,536 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #FFF;
+    /* max-width: 1440px; 
+    max-height: 5126px; */
+    width: 100%;
+}
+/* Navbar Container - Outer wrapper, centers inner content */
+.navbar-container {
+    /* width: 1440px; */
+    height: 86px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #FFF;
+    width: 100%;
+}
+
+/* Navbar Inner Content - The 1280px wide content area */
+.navbar-inner {
+    display: flex;
+    max-width: 1280px; /* Fixed width of the content area */
+    height: 46px;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 auto; /* Centers the 1280px container within 1440px page */
+    justify-content: flex-start;
+    width: 100%; /* Ensures it takes full width of the navbar container */
+    
+}
+/* Navbar Line - Decorative separator */
+.navbar-line {
+    /* width: 1440px;  */
+    height: 1px;
+    opacity: 0.5;
+    background: #E4E4E4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+}
+
+/* Logo and Name Group - Contains the icon and text images */
+.logo-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px; /* Specific gap between logo icon and name text image */
+    flex-shrink: 0;
+     margin-right: 100px; /* This padding ensures the logo group is spaced correctly from the right edge */
+}
+
+/* Styles for the separate logo icon image */
+.logo-icon-img {
+    width: 18.455px;
+        height: 29.999px;
+        flex-shrink: 0;
+        object-fit: contain; 
+        display: flex;
+    width: 114px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+
+/* Styles for the separate "FitWay" text image */
+.logo-text-img {
+    /* IMPORTANT: Measure these dimensions from your actual "FitWay" text image */
+    width: auto; /* Let intrinsic width define it */
+    height: 26.783px; /* Example height based on font size */
+    max-height: 29.999px; /* Ensure vertical alignment */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Navigation Links - The list of navigation items */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 34px; /* Specific gap between individual navigation list items */
+    margin-left: auto;
+}
+
+.nav-links a {
+  color: #777;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a.active-link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;        /* makes underline bolder (optional) */
+  text-underline-offset: 6px;            /* adds space between text and underline */
+  color: #1E1E1E;
+}
+
+.nav-links.Home{
+display: flex;
+width: 52px;
+height: 24px;
+padding-right: 6px;
+align-items: center;
+padding-left: 100px; /* This padding ensures the Home link is spaced correctly from the left edge */
+gap: 34px;
+}
+.nav-links.About{
+display: flex;
+width: 52px;
+height: 24px;
+padding-right: 6px;
+align-items: center;
+}
+.nav-links.Contact{
+color: #777;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+display: flex;
+width: 69px;
+height: 24px;
+padding-right: 7px;
+margin-right: 162.5px; /* Adjusted to ensure the gap is at least 382.5px wide */
+align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav-links.dropdown{
+color: #1E1E1E;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 150% */
+}
+.nav-links .dropdown .arrow { color: #777;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */ }
+
+/* Action Buttons Group - Contains the LOGIN and SIGN UP buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Specific gap between LOGIN and SIGN UP buttons */
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+    margin-left: auto; /* Pushes the buttons to the right end of the navbar */
+}
+
+/* Individual Button Styles */
+.btn {
+    display: flex;
+    height: 44px;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    /* No gap here, as it's for internal button content, not between buttons */
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    background: none;
+    border: none;
+    color: #1E1E1E;
+}
+
+.btn-signup {
+    border: 1px solid #007BFF;
+    background: #007BFF;
+    color: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    /* No gap here, already defined on .nav-buttons */
+}
+
+/* Breadcrumb Section - Below the navbar */
+/* ==== Breadcrumb Section ==== */
+.breadcrumb-section {
+  width: 1280px;
+  max-width: 100%;
+  padding: 30px 0 0 80px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 40;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+  color: #1E1E1E;
+}
+
+.breadcrumb-list li a {
+  color: #1E1E1E;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb-list li a:hover {
+  color: #0d6efd;
+}
+
+.breadcrumb-list li span {
+  color: #B4B4B4;
+  font-weight: 400;
+}
+
+.breadcrumb-list .active {
+  color: #1E1E1E;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* ==== Responsive Fixes ==== */
+@media (max-width: 768px) {
+  .breadcrumb-section {
+    padding: 24px 16px 0;
+  }
+
+  .breadcrumb-list {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+} */
+
+/* Blog Section Wrapper */
+.blog-section {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+}
+
+/* Fixed Width Container */
+.container {
+  width: 1280px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 50px;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+}
+
+/* Blog Banner Image */
+.blog-banner {
+  height: 740px;
+  width: 100%;
+  border-radius: 8px;
+  background: url('./resource/blog_dis.png') center/cover no-repeat, #D9D9D9;
+  align-self: stretch;
+}
+
+/* Blog Title */
+/* Blog Title */
+.blog-title {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  width: 1271.737px;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1px;
+  padding-top: 44px;
+  margin: 0 auto;
+
+}
+
+
+
+/* Meta Info */
+.blog-meta {
+  display: flex;
+  /* width: 1280px; */
+  padding: 0px 8px;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #666;
+  padding-top: 24px;
+}
+
+
+.author-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: 8px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
+}
+
+.author-name {
+  color: #1E1E1E;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.088px;
+}
+
+
+.dot {
+  font-size: 16px;         /* size of the bullet */
+  line-height: 1;
+  color: #E1E1E1;          /* matches your design */
+  margin: 0 4px;           /* spacing between items */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.publish-date {
+  color: #666;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.068px;
+}
+
+
+/* Blog Body Paragraphs */
+.blog-body {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  align-self: stretch;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666666; /* Updated from #333 to #666666 as requested */
+  max-width: 100%;
+}
+
+.blog-body p {
+  margin-bottom: 20px;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px; /* 146.154% */
+  letter-spacing: -0.104px;
+  align-self: stretch;
+}
+
+
+/*  */
+
+    .featured-reads-section {
+      background-color: #fff;
+      padding: 80px 30;
+    }
+
+    .featured-reads-section .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .featured-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #1e1e1e;
+      text-align: left;
+    }
+
+    .blog-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: nowrap; /* Force one line */
+    }
+
+    .blog-card {
+      width: 620px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .blog-card__image-wrapper {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .blog-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .blog-card:hover .blog-card__image {
+      transform: scale(1.05);
+    }
+
+    .blog-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .blog-card__title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1e1e1e;
+    }
+
+    .blog-card__description {
+      font-size: 18px;
+      color: #777;
+      line-height: 28px;
+    }
+
+    .blog-card__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .blog-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .blog-card__author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .blog-card__author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card__author-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .blog-card__date {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Optional: Hide overflow on smaller screens instead of wrapping */
+    @media (max-width: 1280px) {
+      .blog-row {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-title {
+        font-size: 28px;
+      }
+
+      .blog-card__title {
+        font-size: 20px;
+      }
+
+      .blog-card__description {
+        font-size: 16px;
+      }
+    }

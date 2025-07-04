@@ -131,21 +131,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-  function animateOnScroll(selector) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-          observer.unobserve(entry.target); // run only once
-        }
-      });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll(selector).forEach(el => observer.observe(el));
-  }
-
-  // Call function on Hero Section
-  animateOnScroll('.hero-section');
-

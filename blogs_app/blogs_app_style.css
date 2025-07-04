@@ -1,0 +1,827 @@
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #1E1E1E;
+}
+
+/* --- Reusable Animation Keyframes --- */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Animation for request demo */
+/* --- Initial States for Book Demo Section --- */
+.book-demo-section .book-demo-content-wrapper h2,
+.book-demo-section .book-demo-description,
+.book-demo-section .book-demo-button {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.book-demo-section .book-demo-label {
+    opacity: 0; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 0; 
+    border-right: .15em solid transparent; 
+    display: inline-block;
+}
+
+/* --- Animation when 'animate' class is added to the Book Demo Section --- */
+.book-demo-section.animate .book-demo-content-wrapper h2,
+.book-demo-section.animate .book-demo-description,
+.book-demo-section.animate .book-demo-button {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Staggered delays for Book Demo Section elements */
+.book-demo-section.animate .book-demo-content-wrapper h2 {
+    animation-delay: 0s; 
+}
+.book-demo-section.animate .book-demo-description {
+    animation-delay: 0.2s; 
+}
+.book-demo-section.animate .book-demo-button {
+    animation-delay: 0.4s; 
+}
+
+.book-demo-section.animate .book-demo-label {
+    animation:
+        typing 2.5s steps(30, end) forwards, 
+        blink-caret .75s step-end infinite, 
+        fadeInInstant 0.01s forwards; 
+    animation-delay: 1.4s;
+}
+/* Navbar Container - Outer wrapper, centers inner content */
+.navbar-container {
+    width: 1440px;
+    height: 86px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #FFF;
+    width: 100%;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+     position: relative;
+  z-index: 9999; /* Make sure navbar is above hero section */
+}
+
+/* Navbar Inner Content - The 1280px wide content area */
+.navbar-inner {
+    display: flex;
+    max-width: 1280px; /* Fixed width of the content area */
+    height: 46px;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 auto; /* Centers the 1280px container within 1440px page */
+    justify-content: flex-start;
+    width: 100%; /* Ensures it takes full width of the navbar container */
+    
+}
+/* Navbar Line - Decorative separator */
+.navbar-line {
+    /* width: 1440px;  */
+    height: 1px;
+    opacity: 0.5;
+    background: #E4E4E4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+}
+
+/* Logo and Name Group - Contains the icon and text images */
+.logo-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px; /* Specific gap between logo icon and name text image */
+    flex-shrink: 0;
+     margin-right: 100px; /* This padding ensures the logo group is spaced correctly from the right edge */
+}
+
+/* Styles for the separate logo icon image */
+.logo-icon-img {
+    width: 18.455px;
+    height: 29.999px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Styles for the separate "FitWay" text image */
+.logo-text-img {
+    /* IMPORTANT: Measure these dimensions from your actual "FitWay" text image */
+    width: auto; /* Let intrinsic width define it */
+    height: 26.783px; /* Example height based on font size */
+    max-height: 29.999px; /* Ensure vertical alignment */
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Navigation Links - The list of navigation items */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 34px; /* Specific gap between individual navigation list items */
+    margin-left: auto;
+}
+.nav-links.Home{
+display: flex;
+width: 52px;
+height: 24px;
+padding-right: 6px;
+align-items: center;
+padding-left: 100px; /* This padding ensures the Home link is spaced correctly from the left edge */
+gap: 34px;
+}
+.nav-links.About{
+display: flex;
+width: 52px;
+height: 24px;
+padding-right: 6px;
+align-items: center;
+}
+.nav-links.Contact{
+color: #777;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+display: flex;
+width: 69px;
+height: 24px;
+padding-right: 7px;
+margin-right: 162.5px; /* Adjusted to ensure the gap is at least 382.5px wide */
+align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* --- PRODUCTS DROPDOWN SPECIFIC STYLES --- */
+
+/* Container for the entire dropdown: Controls positioning relative to other nav items */
+.products-dropdown-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* The clickable "Products" label and arrow group */
+.products-dropdown-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #777777;
+    font-size: 16px;
+    
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+/* Styling for the "Products" text itself */
+.products-label {
+     word-wrap: break-word;
+}
+
+/* When the dropdown is open, underline the "Products" label */
+.products-dropdown-container.active .products-label {
+    text-decoration: underline;
+}
+
+/* Styles for the dropdown arrow (up/down indicator) */
+.dropdown-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: currentColor;
+
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M4.2977 7.12875C3.82895 6.5425 4.06333 6.09375 4.78583 6.09375H15.3327C16.0752 6.09375 16.2896 6.54313 15.8208 7.12875L10.8796 13.32C10.4108 13.8863 9.68833 13.8863 9.23895 13.32L4.2977 7.12875Z"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M4.2977 7.12875C3.82895 6.5425 4.06333 6.09375 4.78583 6.09375H15.3327C16.0752 6.09375 16.2896 6.54313 15.8208 7.12875L10.8796 13.32C10.4108 13.8863 9.68833 13.8863 9.23895 13.32L4.2977 7.12875Z"/></svg>');
+
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+}
+
+/* When the dropdown is open, rotate the arrow to point UP */
+.products-dropdown-container.active .products-dropdown-toggle .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* The actual dropdown menu container */
+.products-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 0;
+    width: 198px;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, transform 0.4s ease-out;
+}
+
+.products-dropdown-container.active .products-dropdown-menu {
+    max-height: 226px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0;
+}
+
+.dropdown-item {
+    display: flex;
+    padding: 9px 16px 9px 16px;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+    background: white;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, border-left 0.2s, color 0.2s;
+}
+
+.dropdown-item-text {
+    color: #777777;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.dropdown-item:hover {
+    background-color:#e6f0ff;
+    border-left: 4px solid #007BFF;
+}
+
+.dropdown-item.active {
+    background-color: #e6f0ff;
+    border-left: 4px solid #007BFF;
+    color: #007BFF;
+}
+
+/* Action Buttons Group - Contains the LOGIN and SIGN UP buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Specific gap between LOGIN and SIGN UP buttons */
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+    margin-left: auto; /* Pushes the buttons to the right end of the navbar */
+}
+
+/* Individual Button Styles */
+.btn {
+    display: flex;
+    height: 44px;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    /* No gap here, as it's for internal button content, not between buttons */
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    background: none;
+    border: none;
+    color: #1E1E1E;
+}
+
+.btn-signup {
+    border: 1px solid #007BFF;
+    background: #007BFF;
+    color: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    /* No gap here, already defined on .nav-buttons */
+}
+
+
+
+/* BREADCRUMB SECTION */
+.breadcrumb-section {
+  width: 100%;
+  height: auto;
+  padding: 30px 0px 50px 0px;
+  background-color: #FFF;
+  box-sizing: border-box;
+
+}
+
+/* BREADCRUMB CONTAINER */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+ 
+}
+
+/* HOME TEXT */
+.breadcrumb-home {
+  color: #1E1E1E;
+  font-weight: 500;
+}
+
+/* SEPARATOR TEXT */
+.breadcrumb-separator {
+  color: #B4B4B4;
+  font-weight: 400;
+}
+
+/* CURRENT PAGE */
+.breadcrumb-current {
+  color: #1E1E1E;
+  font-weight: 500;
+}
+
+/* ==== Breadcrumb Section ==== */
+.breadcrumb-section {
+  background-color: #FFF;
+  padding: 30px 0px 50px 0px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Home Text */
+.breadcrumb-home {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+}
+
+/* Separator Text */
+.breadcrumb-separator {
+  color: #B4B4B4;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Current Page Text */
+.breadcrumb-current {
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* background-color: #f5f5f5; */
+}
+
+/* Page Wrapper */
+.blog-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* padding: 40px 0; */
+  background-color: #fff;
+}
+
+.blog-section__container {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Blog Card */
+.blog-card {
+  display: flex;                            /* Flex layout */
+  flex-direction: column;                   /* Vertical stacking */
+  justify-content: center;                  /* Center content vertically */
+  align-items: center;                      /* Center content horizontally */
+  width: 620px;                             /* Card width */
+  height: 634px;                            /* Card height */
+  padding: 32px;                            /* Inner spacing */
+  gap: 18px;                                /* Space between child elements */
+  background: #FFF;                         /* White background */
+  border-radius: 16px;                      /* Rounded corners */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08); /* Subtle drop shadow */
+}
+
+
+/* Image */
+.blog-card__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  border-radius: 8px;         /* Match Figma */
+  overflow: hidden;
+  flex-shrink: 0;
+  align-self: stretch;
+  position: relative;
+}
+
+.blog-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out; /* Smooth zoom transition */
+}
+
+/* Hover effect for zoom-in */
+.blog-card__image-wrapper:hover .blog-card__image {
+  transform: scale(1.18); /* Zoom in slightly */
+}
+
+
+/* Content */
+.blog-card__content {
+  display: flex;                      /* Flex layout */
+  flex-direction: column;            /* Stack elements vertically */
+  justify-content: center;           /* Center content vertically */
+  align-items: flex-start;           /* Align content to the left */
+  width: 556px;                      /* Set content width */
+  gap: 24px;                         /* Space between children */
+  flex: 1;                           /* Allow the section to grow */
+}
+
+
+.blog-card__title {
+  width: 586px;
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;         /* 125% */
+  letter-spacing: -0.48px;
+}
+
+
+.blog-card__description {
+  height: auto; /* Or use max-height: 60px if needed */
+  align-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;             /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+
+  color: #777;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.08px;
+}
+
+
+
+
+/* Footer */
+.blog-card__footer {
+  display: flex;
+  width: 556px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.blog-card__author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.blog-card__author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.blog-card__author-info {
+.blog-card__author-info {
+  display: flex;
+  width: 148px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+}
+
+.blog-card__author-name {
+  color: #1E1E1E;
+  /* text-align: center; */
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.068px;
+}
+
+
+.blog-card__date {
+  color: #777;
+  /* text-align: center; */
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.056px;
+}
+
+
+/* Optional Arrow Icon */
+.blog-card__icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('../blogs/blogs_resource/arrow-up-right-svgrepo-com\ 1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.blog-card__icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.blog-section__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.blog-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* Discover section */
+.discover-section {
+  background: url('./blogs_resource/f.png') no-repeat center;
+  background-size: contain;
+  background-position: center;
+  margin-top: 100px;
+  width: 100%;
+  height: 416px;
+  flex-shrink: 0;
+  justify-content: center;
+  box-sizing: border-box;
+  opacity: 1; /* Remove animation here */
+  transform: none; /* Reset transform */
+  /* Remove the animation line */
+}
+.text-slide-wrapper {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.6s ease-out;
+}
+
+.text-slide-wrapper.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyframes */
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* discover-content styling */
+.discover-content {
+  
+  max-width: 950px;
+  margin: 0 auto;
+ 
+  padding-top: 05; /* or remove entirely */
+}
+
+.tagline {
+  text-align: center;
+  padding-top: 60px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #0073ff;
+  letter-spacing: 0.5px;
+  padding-bottom: 12px;
+}
+
+.tagline span {
+  opacity: 0;
+  display: inline-block;
+  transform: scale(0.8);
+  animation: popIn 0.3s forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fallback-text {
+  visibility: hidden;
+}
+ 
+h1 {
+color: #1E1E1E;
+font-family: Inter;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: 56px; /* 116.667% */
+letter-spacing: -1.92px;
+padding-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.description {
+color: #777;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 150% */
+letter-spacing: -0.08px;
+padding-bottom: 24px;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.demo-button {
+  
+  display: flex;
+  padding: 16px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid #007BFF;
+  background: #007BFF;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.demo-button:hover {
+  background-color: #005fcc;
+}
+
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .demo-button {
+    width: 80%;
+    display: inline-block;
+  }
+}

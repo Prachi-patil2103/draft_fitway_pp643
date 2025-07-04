@@ -130,191 +130,7 @@ body {
     }
 }
 
-/* --- Essential Animation Keyframes for Typing Effect --- */
-/* @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
 
-@keyframes fadeInInstant {
-    from { opacity: 0; }
-    to { opacity: 1; }
-} */
-/* Animation for branded member PAGE1 */
-/* --- Initial States for Branded Member App Section --- */
-/* .branded-member-app-section .branded-member-app-text-column h2,
-.branded-member-app-section .branded-member-app-description,
-.branded-member-app-section .branded-member-app-button,
-.branded-member-app-section .branded-member-app-visuals-column .app-screenshot-1,
-.branded-member-app-section .branded-member-app-visuals-column .app-screenshot-2 {
-    opacity: 0;
-    transform: translateY(50px);
-}
-
-.branded-member-app-section .branded-member-app-visuals-column .app-screenshot-1,
-.branded-member-app-section .branded-member-app-visuals-column .app-screenshot-2 {
-    transform: translateX(50px);
-}
-
-.branded-member-app-section .branded-member-app-label {
-    opacity: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    border-right: .15em solid transparent;
-    display: inline-block;
-} */
-
-/* --- Animations when the parent '.branded-member-app-section' gets the 'animate' class --- */
-
-/* .branded-member-app-section.animate .branded-member-app-text-column h2,
-.branded-member-app-section.animate .branded-member-app-description,
-.branded-member-app-section.animate .branded-member-app-button {
-    animation: slideInFromBottom 0.8s ease-out forwards;
-}
-
-.branded-member-app-section.animate .branded-member-app-text-column h2 {
-    animation-delay: 0.2s;
-}
-.branded-member-app-section.animate .branded-member-app-description {
-    animation-delay: 0.4s;
-}
-.branded-member-app-section.animate .branded-member-app-button {
-    animation-delay: 0.6s;
-}
-
-.branded-member-app-section.animate .branded-member-app-visuals-column .app-screenshot-1,
-.branded-member-app-section.animate .branded-member-app-visuals-column .app-screenshot-2 {
-    animation: slideInFromRight 0.8s ease-out forwards;
-    animation-delay: 0s;
-}
-
-.branded-member-app-section.animate .branded-member-app-visuals-column .app-screenshot-2 {
-    animation-delay: 0.1s;
-}
-
-.branded-member-app-section.animate .branded-member-app-label {
-    animation:
-        typing 1.2s steps(21, end) forwards,
-        blink-caret .75s step-end infinite,
-        fadeInInstant 0.01s forwards;
-    animation-delay: 1.0s;
-} */
-/* Animation for images on left side*/
-/* Select all image and text columns within these specific sections and hide them initially */
-.offers-promotions-section > div > div,
-.membership-payment-section > div > div,
-.workout-nutrition-section > div > div,
-.challenges-events-section > div > div, /* Note: Be cautious if this is duplicated on CRM page */
-.on-demand-workout-section > div > div,
-.blogs-section > div > div,
-.community-feed-section > div > div {
-    opacity: 0;
-}
-
-/* Initial transform for image columns (left side, comes from left) */
-.offers-promotions-section .offers-promotions-image-column,
-.membership-payment-section .membership-payment-image-column,
-.workout-nutrition-section .workout-nutrition-image-column,
-.challenges-events-section .challenges-events-image-column,
-.on-demand-workout-section .on-demand-workout-image-column,
-.blogs-section .blogs-image-column,
-.community-feed-section .community-feed-image-column {
-    transform: translateX(-50px);
-}
-
-/* Initial transform for text content (right side, comes from bottom) */
-.offers-promotions-section .offers-promotions-text-column,
-.membership-payment-section .membership-payment-text-content,
-.workout-nutrition-section .workout-nutrition-text-content,
-.challenges-events-section .challenges-events-text-content,
-.on-demand-workout-section .on-demand-workout-text-content,
-.blogs-section .blogs-text-content,
-.community-feed-section .community-feed-text-content {
-    transform: translateY(50px);
-}
-
-
-/* --- Animation when 'animate' class is added to Branded Member Sections --- */
-
-/* Apply slideInFromLeft to image columns when parent section has 'animate' class */
-.offers-promotions-section.animate .offers-promotions-image-column,
-.membership-payment-section.animate .membership-payment-image-column,
-.workout-nutrition-section.animate .workout-nutrition-image-column,
-.challenges-events-section.animate .challenges-events-image-column,
-.on-demand-workout-section.animate .on-demand-workout-image-column,
-.blogs-section.animate .blogs-image-column,
-.community-feed-section.animate .community-feed-image-column {
-    animation: slideInFromLeft 0.8s ease-out forwards;
-    animation-delay: 0s; /* Images can start immediately */
-}
-
-/* Apply slideInFromBottom to text content when parent section has 'animate' class */
-.offers-promotions-section.animate .offers-promotions-text-column,
-.membership-payment-section.animate .membership-payment-text-content,
-.workout-nutrition-section.animate .workout-nutrition-text-content,
-.challenges-events-section.animate .challenges-events-text-content,
-.on-demand-workout-section.animate .on-demand-workout-text-content,
-.blogs-section.animate .blogs-text-content,
-.community-feed-section.animate .community-feed-text-content {
-    animation: slideInFromBottom 0.8s ease-out forwards;
-    animation-delay: 0.2s; /* Content slightly delayed after image */
-}
-/* Animation for buttons and text in the branded member section */
-/* Initial state for all content and image divs within these sections */
-.book-classes-section > div, /* Targets direct children for book-classes-section */
-.coaching-academies-section > div > div, /* Targets inner divs for sections with a content-wrapper */
-.progress-tracking-section > div > div,
-.virtual-wallet-section > div > div,
-.e-commerce-section > div > div,
-.profile-details-section > div > div {
-    opacity: 0;
-}
-
-/* Initial transform for content (left side, comes from bottom) */
-.book-classes-section .book-classes-content,
-.coaching-academies-section .coaching-academies-text-content,
-.progress-tracking-section .progress-tracking-text-content,
-.virtual-wallet-section .virtual-wallet-text-content,
-.e-commerce-section .e-commerce-text-content,
-.profile-details-section .profile-details-text-content {
-    transform: translateY(50px);
-}
-
-/* Initial transform for images (right side, comes from right) */
-.book-classes-section .book-classes-image,
-.coaching-academies-section .coaching-academies-image-column,
-.progress-tracking-section .progress-tracking-image-column,
-.virtual-wallet-section .virtual-wallet-image-column,
-.e-commerce-section .e-commerce-image-column,
-.profile-details-section .profile-details-image-column {
-    transform: translateX(50px);
-}
-
-
-/* --- Animation when 'animate' class is added to these sections --- */
-
-/* Apply slideInFromBottom to content (left side) */
-.book-classes-section.animate .book-classes-content,
-.coaching-academies-section.animate .coaching-academies-text-content,
-.progress-tracking-section.animate .progress-tracking-text-content,
-.virtual-wallet-section.animate .virtual-wallet-text-content,
-.e-commerce-section.animate .e-commerce-text-content,
-.profile-details-section.animate .profile-details-text-content {
-    animation: slideInFromBottom 0.8s ease-out forwards;
-    animation-delay: 0.2s; /* Content delayed slightly */
-}
-
-/* Apply slideInFromRight to images (right side) */
-.book-classes-section.animate .book-classes-image,
-.coaching-academies-section.animate .coaching-academies-image-column,
-.progress-tracking-section.animate .progress-tracking-image-column,
-.virtual-wallet-section.animate .virtual-wallet-image-column,
-.e-commerce-section.animate .e-commerce-image-column,
-.profile-details-section.animate .profile-details-image-column {
-    animation: slideInFromRight 0.8s ease-out forwards;
-    animation-delay: 0s; /* Images can start immediately */
-}
 /* Animation for request demo */
 /* --- Initial States for Book Demo Section --- */
 .book-demo-section .book-demo-content-wrapper h2,
@@ -371,7 +187,11 @@ body {
     background-color: #FFF;
     width: 100%;
     animation: slideInFromBottom 0.8s ease-out forwards;
+    position: relative;
+    z-index: 9999; /* Make sure navbar is above hero section */
 }
+
+
 
 /* Navbar Inner Content - The 1280px wide content area */
 .navbar-inner {
@@ -490,7 +310,10 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
 }
+
+
 
 /* The clickable "Products" label and arrow group */
 .products-dropdown-toggle {
@@ -544,7 +367,6 @@ align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
     background: white;
     box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
@@ -558,6 +380,8 @@ align-items: center;
     opacity: 0;
     transform: translateY(-5px);
     transition: max-height 0.4s ease-out, opacity 0.3s ease-out, transform 0.4s ease-out;
+    z-index: 1000;
+
 }
 
 .products-dropdown-container.active .products-dropdown-menu {
@@ -582,7 +406,6 @@ align-items: center;
 .dropdown-item-text {
     color: #777777;
     font-size: 16px;
-    font-family: Inter;
     font-weight: 400;
     line-height: 20px;
     white-space: nowrap;
